@@ -6,7 +6,7 @@
   <title>Web Audio Basics</title>
   <meta name="description" content="Audio basics demo for Web Audio API">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link rel="shortcut icon" href="#">
 </head>
 <body>
@@ -53,10 +53,7 @@
 <script type="text/javascript">
 	console.clear();
 
-     var value=localStorage["name"];
-
-     console.log(value);
-
+    var value=localStorage["name"];
     document.getElementById('audiotest').src=value;
 
 // for cross browser
@@ -94,7 +91,7 @@ playButton.addEventListener('click', function() {
 
 }, false);
 
-// if track ends
+
 audioElement.addEventListener('ended', () => {
 	playButton.dataset.playing = 'false';
 	playButton.setAttribute( "aria-checked", "false" );
@@ -105,7 +102,6 @@ function init() {
 	audioCtx = new AudioContext();
 	track = audioCtx.createMediaElementSource(audioElement);
 
-	// volume
 	const gainNode = audioCtx.createGain();
 
 	const volumeControl = document.querySelector('[data-action="volume"]');
@@ -122,11 +118,9 @@ function init() {
 		panner.pan.value = this.value;
 	}, false);
 
-	// connect our graph
+
 	track.connect(gainNode).connect(panner).connect(audioCtx.destination);
 }
-
-// Track credit: Outfoxing the Fox by Kevin MacLeod under Creative Commons
 
 </script>
 

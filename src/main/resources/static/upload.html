@@ -66,7 +66,7 @@ function uploadSingleFile(file) {
               localStorage.name=response.fileDownloadUri;
             }
             singleFileUploadError.style.display = "none";
-            singleFileUploadSuccess.innerHTML = "<p> <a href='media.html'>try link</a>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
+            singleFileUploadSuccess.innerHTML = "<p> <a href='media/media.html'>try link</a>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
             singleFileUploadSuccess.style.display = "block";
         } else {
             singleFileUploadSuccess.style.display = "none";
