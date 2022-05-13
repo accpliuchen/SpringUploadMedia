@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Spring Boot File Upload / Download Rest API Example</title>
+    <title>Spring Boot Media File Upload / Download Rest API Example</title>
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
 </noscript>
 <div class="upload-container">
     <div class="upload-header">
-        <h2>Spring Boot File Upload / Download Rest API Example</h2>
+        <h2>Spring Boot Media File Upload / Download Rest API Example</h2>
     </div>
     <div class="upload-content">
         <div class="single-upload">
@@ -25,7 +25,7 @@
                 <div id="singleFileUploadSuccess"></div>
             </div>
         </div>
-        <div class="multiple-upload">
+        <div class="multiple-upload" id="myDiv">
             <h3>Upload Multiple Files</h3>
             <form id="multipleUploadForm" name="multipleUploadForm">
                 <input id="multipleFileUploadInput" type="file" name="files" class="file-input" multiple required />
@@ -49,6 +49,8 @@ var multipleUploadForm = document.querySelector('#multipleUploadForm');
 var multipleFileUploadInput = document.querySelector('#multipleFileUploadInput');
 var multipleFileUploadError = document.querySelector('#multipleFileUploadError');
 var multipleFileUploadSuccess = document.querySelector('#multipleFileUploadSuccess');
+
+document.getElementById("myDiv").style.display = "none";
 
 function uploadSingleFile(file) {
     var formData = new FormData();
